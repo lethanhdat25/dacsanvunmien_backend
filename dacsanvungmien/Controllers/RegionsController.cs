@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using dacsanvungmien.Dtos;
 using dacsanvungmien.Models;
 using dacsanvungmien.Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace dacsanvungmien.Controllers
 {
@@ -46,6 +47,8 @@ namespace dacsanvungmien.Controllers
         // PUT: api/Regions/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
+
         public async Task<IActionResult> PutRegion(int id, Region region)
         {
             if (id != region.Id)
@@ -59,6 +62,7 @@ namespace dacsanvungmien.Controllers
         // POST: api/Regions
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<RegionDto>> PostRegion(CreateRegionDto regionDto)
         {
             Region region = new()
@@ -71,6 +75,7 @@ namespace dacsanvungmien.Controllers
 
         // DELETE: api/Regions/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> DeleteRegion(int id)
         {
             var region = await repository.GetRegionByIdAsync(id);

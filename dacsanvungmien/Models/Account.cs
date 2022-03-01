@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 
 #nullable disable
@@ -14,6 +15,6 @@ namespace dacsanvungmien.Models
         public string UserAddress { get; set; }
         public string FaceBook { get; set; }
         public string Gmail { get; set; }
-        public string Role { get; set; }
+        public string Roles { get; set; }
     }
 }

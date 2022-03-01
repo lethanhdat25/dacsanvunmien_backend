@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f6539fca-49e9-4b4f-ac83-430e0c5888b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/dacsanvungmien/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/dacsanvungmien/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/dacsanvungmien/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/dacsanvungmien/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/Controllers/ProductImageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/Controllers/ProductImageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/Controllers/ProductsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/Controllers/ProductsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/Models/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/Models/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.StaticWebAssets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.StaticWebAssets.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/dacsanvungmien.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/ref/dacsanvungmien.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/bin/Debug/net5.0/ref/dacsanvungmien.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/dacsanvungmien.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/ref/dacsanvungmien.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/ref/dacsanvungmien.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/staticwebassets/dacsanvungmien.StaticWebAssets.Manifest.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/staticwebassets/dacsanvungmien.StaticWebAssets.Manifest.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/staticwebassets/dacsanvungmien.StaticWebAssets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/Debug/net5.0/staticwebassets/dacsanvungmien.StaticWebAssets.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/dacsanvungmien.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/dacsanvungmien.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/dacsanvungmien.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/dacsanvungmien.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/dacsanvungmien.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/dacsanvungmien.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dacsanvungmien/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/dacsanvungmien/obj/project.nuget.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="24nHgOLJK2jQMH89bKfAfsclHrz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f6539fca-49e9-4b4f-ac83-430e0c5888b6" name="Changes" comment="" />
+      <created>1644259541377</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644259541377</updated>
+      <workItem from="1644259542544" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

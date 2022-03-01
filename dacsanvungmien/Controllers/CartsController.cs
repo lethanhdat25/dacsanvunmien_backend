@@ -65,7 +65,7 @@ namespace dacsanvungmien.Controllers
                 Amount = cartDto.Amount,
                 BillId = cartDto.BillId,
                 ProductId = cartDto.ProductId,
-                Total = cartDto.Total,
+                Price = cartDto.Price,
             };
             await repository.AddCartAsync(cart);
             return CreatedAtAction("GetCart", new { id = cart.Id }, cart);

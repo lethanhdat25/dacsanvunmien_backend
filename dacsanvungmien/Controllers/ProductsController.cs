@@ -10,6 +10,7 @@ using dacsanvungmien.Models;
 using dacsanvungmien.Repositories;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace dacsanvungmien.Controllers
 {
@@ -17,39 +18,51 @@ namespace dacsanvungmien.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        private DacSanVungMienContext context;
         private readonly IProductRepository repository;
         private readonly IWebHostEnvironment hostEnvironment;
 
-        public ProductsController(IProductRepository repository, IWebHostEnvironment hostEnvironment)
+        public ProductsController(IProductRepository repository, IWebHostEnvironment hostEnvironment, DacSanVungMienContext context)
         {
             this.repository = repository;
             this.hostEnvironment = hostEnvironment;
+            this.context = context;
         }
 
         // GET: api/Products
         [HttpGet]
-        public async Task<IEnumerable<ProductDto>> GetProduct()
+        [AllowAnonymous]
+        public  IEnumerable<object> GetProduct()
         {
-            return (await repository.GetProductsAsync()).Select(item => item.AsDto());
+
+            var productWithImage= from product in context.Product
+                                    join productImage in context.ProductImage on product.Id equals productImage.ProductId into gj
+                                    from subImage in gj.DefaultIfEmpty()
+                                    select new { Product = product, Image = subImage==null?String.Empty:(subImage.Image??String.Empty) };
+            return productWithImage;
         }
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductDto>> GetProduct(int id)
+        [AllowAnonymous]
+        public async Task<object> GetProduct(int id)
         {
             var product = await repository.GetProductByIdAsync(id);
-
+            var Image = from image in context.ProductImage
+                                   where product.Id == image.ProductId
+                                   select image.Image;
             if (product == null)
             {
                 return NotFound();
             }
 
-            return product.AsDto();
+            return (new { Product = product, Image = Image }); ;
         }
 
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> PutProduct(int id, UpdateProductDto productDto)
         {
             var product = await repository.GetProductByIdAsync(id);
@@ -70,6 +83,7 @@ namespace dacsanvungmien.Controllers
         // POST: api/Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ProductDto>> PostProduct(CreateProductDto productDto)
         {
             Product product = new()
@@ -89,6 +103,7 @@ namespace dacsanvungmien.Controllers
 
         // DELETE: api/Products/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var product = await repository.GetProductByIdAsync(id);
@@ -100,22 +115,6 @@ namespace dacsanvungmien.Controllers
             await repository.DeleteProductAsync(id);
             return NoContent();
         }
-        [NonAction]
-        public async Task<string> SaveImage(IFormFile imageFile)
-        {
-            string imageName = new String(Path.GetFileNameWithoutExtension(imageFile.FileName).Take(10).ToArray()).Replace(' ', '-');
-            imageName = imageName + DateTime.Now.ToString("yymmssfff") + Path.GetExtension(imageFile.FileName);
-            var imagePath = Path.Combine(hostEnvironment.ContentRootPath, "Uploads", imageName);
-            using (var fileStream = new FileStream(imagePath, FileMode.Create))
-            {
-                await imageFile.CopyToAsync(fileStream);
-            }
-            return imageName;
-        }
-        [NonAction]
-        private string FormatImageSrc(string image)
-        {
-            return String.Format("{0}://{1}{2}/Uploads/{3}", Request.Scheme, Request.Host, Request.PathBase, image);
-        }
+        
     }
 }

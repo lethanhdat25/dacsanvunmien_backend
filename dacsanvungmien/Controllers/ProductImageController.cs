@@ -10,6 +10,7 @@ using dacsanvungmien.Models;
 using dacsanvungmien.Repositories;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace dacsanvungmien.Controllers
 {
@@ -54,6 +55,8 @@ namespace dacsanvungmien.Controllers
         // PUT: api/ProductImage/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
+
         public async Task<IActionResult> PutProductImage(int id,[FromForm] UpdateProductImageDto productImageDto)
         {
             var productImage = await repository.GetProductImageByIdAsync(id);
@@ -75,9 +78,10 @@ namespace dacsanvungmien.Controllers
         // POST: api/ProductImage
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<ProductImageDto>> PostProductImage([FromForm]CreateProductImageDto productImageDto)
         {
-            foreach (var image in productImageDto.Image)
+             foreach (var image in productImageDto.Image)
             {
                 ProductImage productImage = new()
                 {
@@ -86,11 +90,12 @@ namespace dacsanvungmien.Controllers
                 };
                 await repository.AddProductImageAsync(productImage);
             }
-            return Ok();
+            return Ok("Post Image Fulfilled");
         }
 
         // DELETE: api/ProductImage/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> DeleteProductImageDto(int id)
         {
             var productImage = await repository.GetProductImageByIdAsync(id);

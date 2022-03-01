@@ -67,7 +67,7 @@ namespace dacsanvungmien
                 Amount=cart.Amount,
                 BillId=cart.BillId,
                 ProductId=cart.ProductId,
-                Total=cart.Total,
+                Price=cart.Price,
             };
         }
         public static AccountDto AsDto(this Account account,string token )
@@ -80,6 +80,20 @@ namespace dacsanvungmien
                 FaceBook=account.FaceBook,
                 PhoneNumber=account.PhoneNumber,
                 Token=token
+            };
+        }
+        public static UserDto AsDto(this Account account)
+        {
+            return new UserDto
+            {
+                Id=account.Id,
+                AccountPassword=account.AccountPassword,
+                Name = account.Name,
+                UserAddress = account.UserAddress,
+                FaceBook= account.FaceBook,
+                Gmail= account.Gmail,
+                PhoneNumber= account.PhoneNumber,
+                Roles=account.Roles,
             };
         }
     }

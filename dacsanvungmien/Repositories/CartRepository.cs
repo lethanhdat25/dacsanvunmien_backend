@@ -19,7 +19,7 @@ namespace dacsanvungmien.Repositories
             var product = await context.Product.FindAsync(cart.ProductId);
             var bill = await context.Bill.FindAsync(cart.BillId);
             if (product is null || bill is null) return null;
-            await context.Bill.AddAsync(bill);
+            await context.Cart.AddAsync(cart);
             await SaveChangesAsync();
             return cart;
         }

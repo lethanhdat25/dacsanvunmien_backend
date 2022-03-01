@@ -1,4 +1,4 @@
-﻿using System;
+﻿  using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,17 +16,36 @@ namespace dacsanvungmien.Controllers
     public class BillsController : ControllerBase
     {
         private readonly IBillRepository repository;
+        private DacSanVungMienContext context;
 
-        public BillsController(IBillRepository repository)
+        public BillsController(IBillRepository repository, DacSanVungMienContext context)
         {
             this.repository = repository;
+            this.context = context;
+
         }
 
         // GET: api/Bills
         [HttpGet]
-        public async Task<IEnumerable<BillDto>> GetBill()
+        public IEnumerable<object> GetBill()
         {
-            return (await repository.GetBillsAsync()).Select(item => item.AsDto());
+            var billData = from bill in context.Bill
+                           join user in context.Account on bill.UserId equals user.Id
+                           join cart in context.Cart on bill.Id equals cart.BillId
+                           join product in context.Product on cart.ProductId equals product.Id
+                           select new
+                           {
+                               id=bill.Id,
+                               total = bill.Total,
+                               oderTime = bill.OrderTime,
+                               status = bill.Status,
+                               productName = product.Name,
+                               productPrice = product.Price,
+                               userName = user.Name,
+                               phoneNumber = user.PhoneNumber,
+                               address = user.UserAddress
+                           };
+            return billData;
         }
 
         // GET: api/Bills/5

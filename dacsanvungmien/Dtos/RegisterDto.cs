@@ -12,6 +12,6 @@ namespace dacsanvungmien.Dtos
         public string AccountPassword { get; set; }
         public string UserAddress { get; set; }
         public string Gmail { get; set; }
-        public string Role { get; set; }
+        public string Roles { get; set; }
     }
 }

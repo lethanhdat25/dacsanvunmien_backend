@@ -48,6 +48,7 @@ namespace dacsanvungmien.Controllers
         // PUT: api/Categories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> PutCategory(int id, Category category)
         {
             if (id != category.Id)
@@ -61,6 +62,8 @@ namespace dacsanvungmien.Controllers
         // POST: api/Categories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
+
         public async Task<ActionResult<CategoryDto>> PostCategory(CreateCategoryDto categoryDto)
         {
             Category category = new()
@@ -73,6 +76,8 @@ namespace dacsanvungmien.Controllers
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ADMIN")]
+
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var category = await repository.GetCategoryByIdAsync(id);
