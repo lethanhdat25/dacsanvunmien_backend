@@ -156,7 +156,7 @@ namespace dacsanvungmien.Controllers
             {
                 return NotFound();
     }
-            if (user.AccountPassword == GetMD5(account.AccountPassword))
+            if (user.AccountPassword == account.AccountPassword)
             {
                 user.FaceBook = account.FaceBook!=null?account.FaceBook:user.FaceBook;
                 user.Roles = account.Roles!=null ? account.Roles : user.Roles;

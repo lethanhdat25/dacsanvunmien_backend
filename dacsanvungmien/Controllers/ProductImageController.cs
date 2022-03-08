@@ -20,11 +20,14 @@ namespace dacsanvungmien.Controllers
     {
         private readonly IProductImageRepository repository;
         private readonly IWebHostEnvironment hostEnvironment;
+        private DacSanVungMienContext context;
 
-        public ProductImageController(IProductImageRepository repository, IWebHostEnvironment hostEnvironment)
+
+        public ProductImageController(IProductImageRepository repository, IWebHostEnvironment hostEnvironment, DacSanVungMienContext context)
         {
             this.repository = repository;
             this.hostEnvironment = hostEnvironment;
+            this.context = context;
         }
 
         // GET: api/ProductImage
@@ -57,18 +60,15 @@ namespace dacsanvungmien.Controllers
         [HttpPut("{id}")]
         [Authorize(Roles = "ADMIN")]
 
-        public async Task<IActionResult> PutProductImage(int id,[FromForm] UpdateProductImageDto productImageDto)
+        public async Task<IActionResult> PutProductImage(int id,[FromForm] CreateProductImageDto productImageDto)
         {
-            var productImage = await repository.GetProductImageByIdAsync(id);
-            if (productImage is null)
+            Product product = await context.Product.FindAsync(id);
+            if (product == null)
             {
                 return NotFound();
             }
-            foreach(var image in productImageDto.Image)
-            {
-                productImage.ProductId = productImageDto.ProductId;
-                productImage.Image = await SaveImage(image);
-            }
+            await DeleteProductImage(id);
+            await PostProductImage(productImageDto);
             
             await repository.SaveChangesAsync();
 
@@ -95,16 +95,13 @@ namespace dacsanvungmien.Controllers
 
         // DELETE: api/ProductImage/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "ADMIN")]
-        public async Task<IActionResult> DeleteProductImageDto(int id)
+        public async Task<IActionResult> DeleteProductImage(int id)
         {
-            var productImage = await repository.GetProductImageByIdAsync(id);
-            if (productImage == null)
-            {
+            Product product = await context.Product.FindAsync(id);
+            if (product == null) {
                 return NotFound();
             }
-
-            await repository.DeleteProductImageAsync(id);
+                await repository.DeleteProductImageAsync(id);
             return NoContent();
         }
         [NonAction]

@@ -20,9 +20,4 @@ namespace dacsanvungmien.Dtos
         public List<IFormFile> Image { get; set; }
         public int ProductId { get; set; }
     }
-    public class UpdateProductImageDto
-    {
-        public List<IFormFile> Image { get; set; }
-        public int ProductId { get; set; }
-    }
 }

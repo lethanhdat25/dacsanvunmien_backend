@@ -28,7 +28,7 @@ namespace dacsanvungmien.Repositories
         public async Task DeleteProductAsync(int id)
         {
             var productImage = await context.ProductImage.FirstOrDefaultAsync(x => x.ProductId == id);
-            while (productImage!=null)
+            while (productImage!=null) 
             {
                 var image = await context.ProductImage.FirstOrDefaultAsync(x => x.ProductId == id);
                if (image == null) break;

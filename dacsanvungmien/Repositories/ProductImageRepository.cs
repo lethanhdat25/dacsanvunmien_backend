@@ -25,10 +25,12 @@ namespace dacsanvungmien.Repositories
 
         public async Task DeleteProductImageAsync(int id)
         {
-            ProductImage productImage = await context.ProductImage.FindAsync(id);
-            if (productImage != null)
+            var productImage = await context.ProductImage.FirstOrDefaultAsync(x => x.ProductId == id);
+            while (productImage != null)
             {
-                context.ProductImage.Remove(productImage);
+                var image = await context.ProductImage.FirstOrDefaultAsync(x => x.ProductId == id);
+                if (image == null) break;
+                context.ProductImage.Remove(image);
                 await SaveChangesAsync();
             }
         }

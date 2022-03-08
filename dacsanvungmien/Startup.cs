@@ -68,16 +68,6 @@ namespace dacsanvungmien
 
                     };
                 });
-            services.AddAuthentication().AddGoogle(googleOptions => {
-                // Đọc thông tin Authentication:Google từ appsettings.json
-                IConfigurationSection googleAuthNSection = Configuration.GetSection("Authentication:Google");
-                // Thiết lập ClientID và ClientSecret để truy cập API google
-                googleOptions.ClientId = googleAuthNSection["ClientId"];
-                googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
-                // Cấu hình Url callback lại từ Google (không thiết lập thì mặc định là /signin-google)
-                googleOptions.CallbackPath = "/login-with-google";
-                googleOptions.Scope.Add("profile");
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

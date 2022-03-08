@@ -66,12 +66,17 @@ namespace dacsanvungmien.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBill(int id, Bill bill)
         {
-            if (id != bill.Id)
+         
+            var billInDb = await repository.GetBillByIdAsync(id);
+            if (billInDb is null)
             {
-                return BadRequest();
+                return NotFound();
             }
-            await repository.UpdateBillAsync(bill);
+            billInDb.Status = bill.Status;
+            await repository.SaveChangesAsync();
             return NoContent();
+
+
         }
 
         // POST: api/Bills
