@@ -42,6 +42,7 @@ namespace dacsanvungmien.Controllers
                                productName = product.Name,
                                productPrice = product.Price,
                                userName = user.Name,
+                               userId=user.Id,
                                phoneNumber = user.PhoneNumber,
                                address = user.UserAddress
                            };
