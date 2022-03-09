@@ -20,12 +20,10 @@ namespace dacsanvungmien.Controllers
     {
         private DacSanVungMienContext context;
         private readonly IProductRepository repository;
-        private readonly IWebHostEnvironment hostEnvironment;
 
-        public ProductsController(IProductRepository repository, IWebHostEnvironment hostEnvironment, DacSanVungMienContext context)
+        public ProductsController(IProductRepository repository, DacSanVungMienContext context)
         {
             this.repository = repository;
-            this.hostEnvironment = hostEnvironment;
             this.context = context;
         }
 
@@ -75,7 +73,11 @@ namespace dacsanvungmien.Controllers
             product.CategoryId = productDto.CategoryId;
             product.Price = productDto.Price;
             product.PriceSale = productDto.PriceSale;
+            product.Amount= productDto.Amount;
+            product.Dvt = productDto.Dvt;
+            product.Weight = productDto.Weight;
             product.RegionId = productDto.RegionId;
+            product.ProvinceId=productDto.ProvinceId;
             await repository.SaveChangesAsync();
             return NoContent();
         }
@@ -92,8 +94,12 @@ namespace dacsanvungmien.Controllers
                 Description = productDto.Description,
                 Price = productDto.Price,
                 PriceSale = productDto.PriceSale,
+                Amount = productDto.Amount,
+                Dvt = productDto.Dvt,
+                Weight = productDto.Weight,
                 RegionId = productDto.RegionId,
                 CategoryId = productDto.CategoryId,
+                ProvinceId = productDto.ProvinceId,
             };
             await repository.AddProductAsync(product);
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);

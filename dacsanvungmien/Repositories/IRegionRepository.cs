@@ -10,9 +10,9 @@ namespace dacsanvungmien.Repositories
     {
         Task<IEnumerable<Region>> GetRegionsAsync();
         Task<Region> GetRegionByIdAsync(int id);
-        Task<Region> AddRegionAsync(Region region);
+        /*Task<Region> AddRegionAsync(Region region);
         Task DeleteRegionAsync(int id);
-        Task UpdateRegionAsync(Region region);
+        Task UpdateRegionAsync(Region region);*/
         Task SaveChangesAsync();
     }
 }

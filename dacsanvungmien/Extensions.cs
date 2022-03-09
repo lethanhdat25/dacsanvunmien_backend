@@ -27,7 +27,11 @@ namespace dacsanvungmien
                 CategoryId = product.CategoryId,
                 Price = product.Price,
                 PriceSale = product.PriceSale,
+                Dvt=product.Dvt,
+                Weight=product.Weight,
+                Amount=product.Amount,
                 RegionId = product.RegionId,
+                ProvinceId=product.ProvinceId,
             };
         }
         public static ProductImageDto AsDto(this ProductImage productImage, string imageSrc)
@@ -48,6 +52,35 @@ namespace dacsanvungmien
                 Name = region.Name
             };
         }
+
+        public static WeightDto AsDto(this Weight weight)
+        {
+            return new WeightDto
+            {
+                Id = weight.Id,
+                Name = weight.Name
+            };
+        }
+
+        public static DvtDto AsDto(this Dvt dvt)
+        {
+            return new DvtDto
+            {
+                Id = dvt.Id,
+                Name = dvt.Name
+            };
+        }
+
+        public static ProvinceDto AsDto(this Province province)
+        {
+            return new ProvinceDto
+            {
+                Id = province.Id,
+                Name = province.Name,
+                RegionId=province.RegionId,
+            };
+        }
+
         public static BillDto AsDto(this Bill bill)
         {
             return new BillDto

@@ -52,6 +52,9 @@ namespace dacsanvungmien
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IBillRepository, BillRepository>();
             services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<IProvinceRepository, ProvinceRepository>();
+            services.AddScoped<IWeightRepository, WeightRepository>();
+            services.AddScoped<IDvtRepository, DvtRepository>();
             //TODO: Add Authorize with token (JWT)
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
                 options =>

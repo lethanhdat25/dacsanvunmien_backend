@@ -44,7 +44,7 @@ namespace dacsanvungmien.Controllers
             return region.AsDto();
         }
 
-        // PUT: api/Regions/5
+        /*// PUT: api/Regions/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         [Authorize(Roles = "ADMIN")]
@@ -86,7 +86,7 @@ namespace dacsanvungmien.Controllers
 
             await repository.DeleteRegionAsync(id);
             return NoContent();
-        }
+        }*/
 
     }
 }

@@ -21,6 +21,9 @@ namespace dacsanvungmien.Models
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductImage> ProductImage { get; set; }
         public virtual DbSet<Region> Region { get; set; }
+        public virtual DbSet<Province> Province { get; set; }
+        public virtual DbSet<Weight> Weight { get; set; }
+        public virtual DbSet<Dvt> Dvt { get; set; }
 
         //Config data trong Startup
         /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -48,7 +51,10 @@ namespace dacsanvungmien.Models
         public DbSet<dacsanvungmien.Dtos.BillDto> BillDto { get; set; }
 
         public DbSet<dacsanvungmien.Dtos.RegionDto> RegionDto { get; set; }
+        public DbSet<dacsanvungmien.Dtos.ProvinceDto> ProvinceDto { get; set; }
 
         public DbSet<dacsanvungmien.Dtos.ProductImageDto> ProductImageDto { get; set; }
+        public DbSet<dacsanvungmien.Dtos.WeightDto> WeightDto { get; set; }
+        public DbSet<dacsanvungmien.Dtos.DvtDto> DvtDto { get; set; }
     }
 }

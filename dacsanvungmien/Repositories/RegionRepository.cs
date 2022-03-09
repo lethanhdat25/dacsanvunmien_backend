@@ -14,7 +14,7 @@ namespace dacsanvungmien.Repositories
         {
             this.context = context;
         }
-        public async Task<Region> AddRegionAsync(Region region)
+        /*public async Task<Region> AddRegionAsync(Region region)
         {
             await context.Region.AddAsync(region);
             await SaveChangesAsync();
@@ -29,7 +29,7 @@ namespace dacsanvungmien.Repositories
                 context.Region.Remove(region);
                 await SaveChangesAsync();
             }
-        }
+        }*/
 
         public async Task<Region> GetRegionByIdAsync(int id)
         {
@@ -46,10 +46,10 @@ namespace dacsanvungmien.Repositories
             await context.SaveChangesAsync();
         }
 
-        public async Task UpdateRegionAsync(Region region)
+       /* public async Task UpdateRegionAsync(Region region)
         {
             context.Entry(region).State = EntityState.Modified;
             await SaveChangesAsync();
-        }
+        }*/
     }
 }

@@ -14,8 +14,12 @@ namespace dacsanvungmien.Dtos
         public string Description { get; set; }
         public decimal Price { get; set; }
         public decimal? PriceSale { get; set; }
+        public string Dvt { get; set; }
+        public int Amount { get; set; }
+        public string  Weight { get; set; }
         public int CategoryId { get; set; }
         public int RegionId { get; set; }
+        public int ProvinceId { get; set; }
     }
     public class CreateProductDto
     {
@@ -23,8 +27,13 @@ namespace dacsanvungmien.Dtos
         public string Description { get; set; }
         public decimal Price { get; set; }
         public decimal? PriceSale { get; set; }
+        public string Dvt { get; set; }
+        public int Amount { get; set; }
+        public string Weight { get; set; }
         public int CategoryId { get; set; }
         public int RegionId { get; set; }
+        public int ProvinceId { get; set; }
+
     }
     public class UpdateProductDto
     {
@@ -32,7 +41,12 @@ namespace dacsanvungmien.Dtos
         public string Description { get; set; }
         public decimal Price { get; set; }
         public decimal? PriceSale { get; set; }
+        public string Dvt { get; set; }
+        public int Amount { get; set; }
+        public string Weight { get; set; }
         public int CategoryId { get; set; }
         public int RegionId { get; set; }
+        public int ProvinceId { get; set; }
+
     }
 }
