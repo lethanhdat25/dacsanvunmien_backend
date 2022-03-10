@@ -147,8 +147,7 @@ namespace dacsanvungmien.Controllers
         // PUT: api/Account/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [Authorize(Roles = "ADMIN")]
-        public async Task<IActionResult> PutUser(int id, Account account)
+        public async Task<ActionResult<UserDto>> PutUser(int id, Account account)
         {
 
             var user = await repository.GetUserByIdAsync(id);
@@ -165,7 +164,7 @@ namespace dacsanvungmien.Controllers
                 user.PhoneNumber = account.PhoneNumber != null ? account.PhoneNumber : user.PhoneNumber;
                 user.Name = account.Name != null ? account.Name : user.Name;
                 await repository.SaveChangesAsync();
-                return NoContent();
+                return user.AsDto();
             }
             return NoContent();
         }
