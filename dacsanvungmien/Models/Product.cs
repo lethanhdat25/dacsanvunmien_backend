@@ -15,6 +15,7 @@ namespace dacsanvungmien.Models
         public string Dvt { get; set; }
         public int Amount { get; set; }
         public string Weight { get; set; }
+        public DateTime? CreatedDate { get; set; }
         public int CategoryId { get; set; }
         public int RegionId { get; set; }
         public int ProvinceId { get; set; }

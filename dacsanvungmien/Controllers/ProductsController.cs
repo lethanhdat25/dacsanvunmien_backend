@@ -100,7 +100,8 @@ namespace dacsanvungmien.Controllers
                 RegionId = productDto.RegionId,
                 CategoryId = productDto.CategoryId,
                 ProvinceId = productDto.ProvinceId,
-            };
+                CreatedDate= DateTime.UtcNow
+        };
             await repository.AddProductAsync(product);
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
         }
@@ -121,6 +122,7 @@ namespace dacsanvungmien.Controllers
             await repository.DeleteProductAsync(id);
             return NoContent();
         }
+        
         
     }
 }
