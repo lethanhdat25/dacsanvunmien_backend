@@ -12,7 +12,9 @@ namespace dacsanvungmien.Dtos
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
         public decimal Price { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
         public decimal? PriceSale { get; set; }
         public string Dvt { get; set; }
         public int Amount { get; set; }
@@ -24,8 +26,10 @@ namespace dacsanvungmien.Dtos
     public class CreateProductDto
     {
         public string Name { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
         public string Description { get; set; }
         public decimal Price { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
         public decimal? PriceSale { get; set; }
         public string Dvt { get; set; }
         public int Amount { get; set; }
